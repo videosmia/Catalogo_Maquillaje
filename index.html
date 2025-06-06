@@ -1,76 +1,144 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Diva - Catálogo de Maquillaje</title>
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brilla Makeup</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f7f3f9;
-      color: #4a3c5c;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f5f2;
+      color: #333;
+      overflow-x: hidden;
+    }
+    .dark-mode {
+      background-color: #1e1e1e;
+      color: #fff;
     }
     header {
-      background-color: #dec9e9;
-      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #f4d3c7;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      color: #b8860b;
+    }
+    .theme-switch {
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    .search-bar {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .categories {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .category {
+      min-width: 100px;
       text-align: center;
-      font-size: 28px;
-      font-weight: bold;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
     }
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 20px;
-      padding: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
     }
-    .product {
-      background-color: white;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+    .product-image {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 0.5rem;
+    }
+    .promotions {
+      background-color: #f4d3c7;
+      padding: 1rem;
       text-align: center;
     }
-    .product img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
+    .favorites {
+      padding: 1rem;
     }
-    .product h3 {
-      font-size: 18px;
-      margin: 10px 0 5px 0;
-    }
-    .product p {
-      font-size: 14px;
-      color: #6a5d7b;
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #b8860b;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <header>Diva - Catálogo de Maquillaje</header>
-  <div class="product-grid">
-    <div class="product">
-      <img src="https://via.placeholder.com/150x100?text=Labial+Rosa" alt="Labial Rosa">
-      <h3>Labial Rosa</h3>
-      <p>$25.000</p>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/150x100?text=Base+Tono+Claro" alt="Base Clara">
-      <h3>Base Tono Claro</h3>
-      <p>$38.000</p>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/150x100?text=Sombras+Violetas" alt="Sombras Violetas">
-      <h3>Sombras Violetas</h3>
-      <p>$30.000</p>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/150x100?text=Labial+Rojo" alt="Labial Rojo">
-      <h3>Labial Rojo Pasión</h3>
-      <p>$28.000</p>
-    </div>
-  </div>
+  <header>
+    <h1>Brilla Makeup</h1>
+    <span class="theme-switch" onclick="toggleTheme()">🌙</span>
+  </header>
+  <main>
+    <input type="text" class="search-bar" placeholder="Buscar productos...">
+    <section class="categories">
+      <div class="category">Labiales</div>
+      <div class="category">Sombras</div>
+      <div class="category">Bases</div>
+      <div class="category">Máscaras</div>
+    </section>
+    <section class="promotions">
+      <h2>Promociones de la semana</h2>
+      <p>Descuentos exclusivos hasta el <strong>20/10/2023</strong></p>
+    </section>
+    <section class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150"  alt="Producto" class="product-image">
+        <div class="product-info">
+          <h3>Labial Mate</h3>
+          <p>$15.99</p>
+          <button>Agregar a Favoritos</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150"  alt="Producto" class="product-image">
+        <div class="product-info">
+          <h3>Sombra Nude</h3>
+          <p>$25.99</p>
+          <button>Agregar a Favoritos</button>
+        </div>
+      </div>
+    </section>
+    <section class="favorites">
+      <h2>Mis Favoritos</h2>
+      <p>No hay productos favoritos aún.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Brilla Makeup. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
