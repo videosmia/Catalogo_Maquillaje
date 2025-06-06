@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Diva - Catálogo de Maquillaje</title>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f3f9;
+      color: #4a3c5c;
+    }
+    header {
+      background-color: #dec9e9;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background-color: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .product h3 {
+      font-size: 18px;
+      margin: 10px 0 5px 0;
+    }
+    .product p {
+      font-size: 14px;
+      color: #6a5d7b;
+    }
+  </style>
+</head>
+<body>
+  <header>Diva - Catálogo de Maquillaje</header>
+  <div class="product-grid">
+    <div class="product">
+      <img src="https://via.placeholder.com/150x100?text=Labial+Rosa" alt="Labial Rosa">
+      <h3>Labial Rosa</h3>
+      <p>$25.000</p>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150x100?text=Base+Tono+Claro" alt="Base Clara">
+      <h3>Base Tono Claro</h3>
+      <p>$38.000</p>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150x100?text=Sombras+Violetas" alt="Sombras Violetas">
+      <h3>Sombras Violetas</h3>
+      <p>$30.000</p>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150x100?text=Labial+Rojo" alt="Labial Rojo">
+      <h3>Labial Rojo Pasión</h3>
+      <p>$28.000</p>
+    </div>
+  </div>
+</body>
+</html>

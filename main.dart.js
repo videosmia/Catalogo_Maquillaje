@@ -1,0 +1,1 @@
+// Simulación de JavaScript generado por Flutter
